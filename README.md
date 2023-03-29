@@ -1,0 +1,3 @@
+# Nvim Config
+
+So you chose the path of pain ...
