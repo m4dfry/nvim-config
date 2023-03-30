@@ -15,6 +15,7 @@ vim.g.nvim_tree_highlight_opened_files = 1
 --}
 
 require("nvim-tree").setup({
+  update_focused_file = { enable = true },
   sort_by = "case_sensitive",
   renderer = {
 	  group_empty = true,
@@ -46,7 +47,4 @@ require("nvim-tree").setup({
 })
 
 
-vim.api.nvim_set_keymap('n', '<C-n>', ':NvimTreeToggle<CR>', {noremap = true})
-vim.api.nvim_set_keymap('n', '-', ':NvimTreeToggle<CR>', {noremap = true})
-vim.api.nvim_set_keymap('n', '<leader>n', ':NvimTreeFindFile<CR>', {noremap = true})
 
