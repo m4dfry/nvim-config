@@ -1,3 +1,3 @@
 # Nvim Config
 
-So you chose the path of pain ...
+So you have chosen the way of pain ..
