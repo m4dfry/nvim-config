@@ -1,3 +1,1 @@
-require('plugin')
-require('remap')
-
+require('config')
