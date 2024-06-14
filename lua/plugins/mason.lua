@@ -16,7 +16,7 @@ return {
   {
     "williamboman/mason-lspconfig.nvim",
     opts = {
-      ensure_installed = {"lua_ls", "gopls"},
+      ensure_installed = { "lua_ls", "gopls", "pyright" },
       automatic_installation = true
 
     },
