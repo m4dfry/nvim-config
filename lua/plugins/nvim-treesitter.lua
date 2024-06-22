@@ -8,16 +8,16 @@ local config = function()
 		},
 		ensure_installed = {
 			"markdown",
+			"markdown_inline",
 			"json",
 			"yaml",
 			"javascript",
 			"typescript",
-      "go",
+			"go",
 			"lua",
 			"python",
 			"html",
 			"css",
-			"markdown",
 			"bash",
 			"dockerfile",
 			"gitignore",
@@ -32,6 +32,6 @@ end
 
 return {
 	"nvim-treesitter/nvim-treesitter",
-  lazy = false,
-  config = config
+	lazy = false,
+	config = config,
 }

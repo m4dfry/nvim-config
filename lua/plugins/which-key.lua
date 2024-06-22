@@ -13,7 +13,7 @@ return {
 				name = "Telescope",
 			},
 			["<leader>c"] = {
-				name = "Code/LSP",
+				name = "Code/LSP/Comment",
 			},
 			["<leader>w"] = {
 				name = "Windows",

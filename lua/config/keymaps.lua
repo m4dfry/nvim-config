@@ -3,9 +3,9 @@ local keymap = vim.keymap
 local opts = { noremap = true, silent = true }
 
 local opts_wdescr = function(desc)
-  local opts_wdescr = opts
-  opts_wdescr.desc = desc
-  return opts_wdescr
+	local opts_wdescr = opts
+	opts_wdescr.desc = desc
+	return opts_wdescr
 end
 
 -- Dir navigation on NvimTree
@@ -19,7 +19,7 @@ keymap.set("n", "<C-k>", "<C-w>k", opts) -- Navigate Up
 keymap.set("n", "<C-l>", "<C-w>l", opts) -- Navigate Right
 
 -- Window Management
-keymap.set("n", "<leader>wv", ":vsplit<CR>", opts_wdescr("Split Vertical"))  -- Split Vertically
+keymap.set("n", "<leader>wv", ":vsplit<CR>", opts_wdescr("Split Vertical")) -- Split Vertically
 keymap.set("n", "<leader>wh", ":split<CR>", opts_wdescr("Split Horizontal")) -- Split Horizontally
 -- keymap.set("n", "<leader>sm", ":MaximizerToggle<CR>", opts) -- Toggle Minimize
 
@@ -53,11 +53,3 @@ keymap.set("n", "<leader>fb", ":Telescope buffers<CR>", opts_wdescr("Telescope s
 -- jump
 -- <C-o> jump back to the previous (older) location.
 -- <C-i> jump forward to the next (newer) location.
-
--- -- comment
--- NORMAL mode
--- `gcc` - Toggles the current line using linewise comment
--- `gbc` - Toggles the current line using blockwise comment
--- VISUAL mode
--- `gc` - Toggles the region using linewise comment
--- `gb` - Toggles the region using blockwise comment
