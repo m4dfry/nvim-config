@@ -8,6 +8,8 @@ return {
   },
 
   config = function()
+    require('java').setup()
+
     local lspconfig = require("lspconfig")
     local util = require("lspconfig/util")
     local capabilities = require("cmp_nvim_lsp").default_capabilities()
@@ -44,5 +46,7 @@ return {
         }
       }
     }
+
+    lspconfig.jdtls.setup {}
   end,
 }
