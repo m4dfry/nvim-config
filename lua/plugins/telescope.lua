@@ -8,6 +8,9 @@ local config = function()
           ["<C-k>"] = "move_selection_previous",
         },
       },
+      file_ignore_patterns = {
+        "node_modules", "build", "dist", "yarn.lock", "mvnw", "mvnw.cmd"
+      },
     },
     pickers = {
       find_files = {

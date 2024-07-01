@@ -3,9 +3,9 @@ local keymap = vim.keymap
 local opts = { noremap = true, silent = true }
 
 local opts_wdescr = function(desc)
-	local opts_wdescr = opts
-	opts_wdescr.desc = desc
-	return opts_wdescr
+    local opts_wdescr = opts
+    opts_wdescr.desc = desc
+    return opts_wdescr
 end
 
 -- Dir navigation on NvimTree
@@ -19,7 +19,7 @@ keymap.set("n", "<C-k>", "<C-w>k", opts) -- Navigate Up
 keymap.set("n", "<C-l>", "<C-w>l", opts) -- Navigate Right
 
 -- Window Management
-keymap.set("n", "<leader>wv", ":vsplit<CR>", opts_wdescr("Split Vertical")) -- Split Vertically
+keymap.set("n", "<leader>wv", ":vsplit<CR>", opts_wdescr("Split Vertical"))  -- Split Vertically
 keymap.set("n", "<leader>wh", ":split<CR>", opts_wdescr("Split Horizontal")) -- Split Horizontally
 -- keymap.set("n", "<leader>sm", ":MaximizerToggle<CR>", opts) -- Toggle Minimize
 
@@ -39,12 +39,44 @@ keymap.set("n", "K", vim.lsp.buf.hover)
 keymap.set("n", "<leader>cd", vim.lsp.buf.definition, opts_wdescr("LSP Show Definition"))
 keymap.set({ "n", "v" }, "<leader>ca", vim.lsp.buf.code_action, opts_wdescr("LSP Code Action"))
 
+-- diagnostic
+keymap.set("n", "<leader>cf", vim.diagnostic.open_float, opts_wdescr("Open Diagnostic"))
+
 -- telescope
 keymap.set("n", "<leader>fk", ":Telescope keymaps<CR>", opts_wdescr("Telescope show keymaps"))
 keymap.set("n", "<leader>fh", ":Telescope help_tags<CR>", opts_wdescr("Telescope show help"))
 keymap.set("n", "<leader>ff", ":Telescope find_files<CR>", opts_wdescr("Telescope find files"))
 keymap.set("n", "<leader>fg", ":Telescope live_grep<CR>", opts_wdescr("Telescope find w/ live grep"))
 keymap.set("n", "<leader>fb", ":Telescope buffers<CR>", opts_wdescr("Telescope show buffers"))
+
+-- DAP
+vim.keymap.set('n', '<F6>', function() require('dap').continue() end)
+vim.keymap.set('n', '<F8>', function() require('dap').step_over() end)
+vim.keymap.set('n', '<F9>', function() require('dap').step_into() end)
+vim.keymap.set('n', '<F10>', function() require('dap').step_out() end)
+vim.keymap.set('n', '<Leader>b', function() require('dap').toggle_breakpoint() end)
+-- vim.keymap.set('n', '<Leader>B', function() require('dap').set_breakpoint() end)
+
+vim.keymap.set('n', '<Leader>db',
+    function() require('dap').set_breakpoint(nil, nil, vim.fn.input('Log point message: ')) end)
+vim.keymap.set('n', '<Leader>dr', function() require('dap').repl.open() end)
+vim.keymap.set('n', '<Leader>dl', function() require('dap').run_last() end)
+
+vim.keymap.set({ 'n', 'v' }, '<Leader>dh', function()
+    require('dap.ui.widgets').hover()
+end)
+vim.keymap.set({ 'n', 'v' }, '<Leader>dp', function()
+    require('dap.ui.widgets').preview()
+end)
+vim.keymap.set('n', '<Leader>df', function()
+    local widgets = require('dap.ui.widgets')
+    widgets.centered_float(widgets.frames)
+end)
+vim.keymap.set('n', '<Leader>ds', function()
+    local widgets = require('dap.ui.widgets')
+    widgets.centered_float(widgets.scopes)
+end)
+
 
 ----------
 -- MEMO --
