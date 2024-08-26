@@ -8,24 +8,12 @@ return {
     config = function()
         local wk = require("which-key")
 
-        wk.register({
-            ["<leader>f"] = {
-                name = "Telescope",
-            },
-            ["<leader>c"] = {
-                name = "Code/LSP/Comment",
-            },
-            ["<leader>w"] = {
-                name = "Windows",
-            },
-            ["<leader>x"] = {
-                name = "Trouble",
-            },
-            ["<leader>d"] = {
-                name = "DAP",
-            }
-
-
+        wk.add({
+            { "<leader>c", group = "Code/LSP/Comment" },
+            { "<leader>d", group = "DAP" },
+            { "<leader>f", group = "Telescope" },
+            { "<leader>w", group = "Windows" },
+            { "<leader>x", group = "Trouble" },
         })
     end,
     opts = {
