@@ -9,15 +9,16 @@ return {
         local wk = require("which-key")
 
         wk.add({
+            mode = { "n", "v" },
             { "<leader>c", group = "Code/LSP/Comment" },
             { "<leader>d", group = "DAP" },
             { "<leader>f", group = "Telescope" },
             { "<leader>w", group = "Windows" },
             { "<leader>x", group = "Trouble" },
+            { "<leader>r", group = "Repl" },
         })
     end,
     opts = {
-        -- your configuration comes here
         -- or leave it empty to use the default settings
         -- refer to the configuration section below
     },
