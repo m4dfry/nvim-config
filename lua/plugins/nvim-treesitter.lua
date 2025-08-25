@@ -21,6 +21,8 @@ local config = function()
 			"bash",
 			"dockerfile",
 			"gitignore",
+			"gomod",
+			"ssh_config",
 		},
 		auto_install = true,
 		highlight = {
