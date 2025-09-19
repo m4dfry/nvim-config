@@ -3,10 +3,14 @@ local keymap = vim.keymap
 local opts = { noremap = true, silent = true }
 
 local opts_wdescr = function(desc)
-	local opts_wdescr = opts
-	opts_wdescr.desc = desc
-	return opts_wdescr
+	return { noremap = true, silent = true, desc = desc }
 end
+
+-- Toggle relative number and precognition plugin
+keymap.set("n", "<leader>g", ":set relativenumber!<CR>:Precognition toggle<CR>", opts_wdescr("Toggle Nav Help"))
+
+-- Save current buffer
+keymap.set("n", "<leader><C-s>", ":w<CR>", opts_wdescr("Save buffer"))
 
 -- Dir navigation on NvimTree
 -- keymap.set("n", "<leader>q", ":NvimTreeFocus<CR>", opts)

@@ -16,6 +16,7 @@ return {
             { "<leader>w", group = "Windows" },
             { "<leader>x", group = "Trouble" },
             { "<leader>r", group = "Repl" },
+            { "<leader>q", group = "Quit" },
         })
     end,
     opts = {
